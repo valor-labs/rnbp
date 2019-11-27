@@ -14,8 +14,7 @@ axiosInstance.interceptors.request.use(
         value.headers = {
             ...value.headers,
             Authentication: headersValues[0][1],
-            'X-User-Email': headersValues[1][1],
-            'X-Subscription-Token': headersValues[2][1],
+            'X-User-Email': headersValues[1][1]
         };
         return value;
     },
