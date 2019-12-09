@@ -1,18 +1,21 @@
 import React, { createContext, ReactNode, useContext, useReducer } from 'react';
-import { jokesReducer } from './reducers/selected-jokes.reducer';
+import { jokesReducer } from './reducers/jokes.reducer';
+import { userReducer } from './reducers/user.reducer';
 
 const GlobalContext = createContext({});
 
 export function GlobalProvider({ children }: { children: ReactNode }) {
     const state = {
-        jokes: useReducer(jokesReducer, [])
+        jokes: useReducer(jokesReducer, []),
+        user: useReducer(userReducer, {})
     };
 
     return <GlobalContext.Provider value={state}>{children}</GlobalContext.Provider>;
 }
 
 export enum State {
-    Jokes = 'jokes'
+    Jokes = 'jokes',
+    User = 'user',
 }
 
 export const useGlobalState = (key: string) => useContext(GlobalContext)[key][0];

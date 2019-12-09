@@ -6,7 +6,7 @@ import { Spacing, Typography, Buttons } from '../styles';
 import { NavigationStackProp } from 'react-navigation-stack';
 import { AuthRoutes } from '../common/constants/routes';
 import { HomeHeader } from '../components/Home-header';
-import { REMOVE_JOKES } from '../context/actions/selected-jokes.actions';
+import { REMOVE_JOKES } from '../context/actions/jokes.actions';
 // import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
 type Props = {
@@ -45,6 +45,15 @@ export function HomeScreen({ navigation }: Props) {
                     theme={{ colors: { primary: 'white' } }}
                     style={styles.optionButton}
                     onPress={() => jokesDispatch({ type: REMOVE_JOKES })}
+                >
+                </Button>
+                <Button
+                    title="My Profile"
+                    mode='text'
+                    uppercase={false}
+                    theme={{ colors: { primary: 'white' } }}
+                    style={styles.optionButton}
+                    onPress={() => navigation.navigate(RootRoutes.MyProfile)}
                 >
                 </Button>
             </ScrollView>

@@ -10,11 +10,18 @@ import { GlobalProvider } from './context/context';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { ViewJoke } from './views/View-joke';
 import { JokesList } from './views/Jokes-list';
+import { ProfileFormTabs } from './views/my-profile';
+import { SuccessScreen } from './views/Success';
+import { FailScreen } from './views/Fail';
+
 
 const AppStack = createStackNavigator({
     [RootRoutes.Home]: { screen: HomeScreen, navigationOptions: { header: null } },
     [RootRoutes.ViewJoke]: { screen: ViewJoke, navigationOptions: { header: null } },
-    [RootRoutes.JokesList]: { screen: JokesList, navigationOptions: { header: null } }
+    [RootRoutes.JokesList]: { screen: JokesList, navigationOptions: { header: null } },
+    [RootRoutes.MyProfile]: { screen: ProfileFormTabs, navigationOptions: { header: null } },
+    [RootRoutes.Fail]: { screen: FailScreen, navigationOptions: { header: null, gesturesEnabled: false } },
+    [RootRoutes.Success]: { screen: SuccessScreen, navigationOptions: { header: null, gesturesEnabled: false } },
 });
 
 const RootStack = createSwitchNavigator({

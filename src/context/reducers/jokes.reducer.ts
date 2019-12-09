@@ -1,4 +1,4 @@
-import { ADD_JOKE, REMOVE_JOKES } from '../actions/selected-jokes.actions';
+import { ADD_JOKE, REMOVE_JOKES } from '../actions/jokes.actions';
 
 export function jokesReducer(state: any[], action: any) {
     switch (action.type) {

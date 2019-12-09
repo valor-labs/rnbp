@@ -7,7 +7,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { NavigationStackProp } from 'react-navigation-stack';
 import { Loader } from '../components/shared/Loader';
 import { Spacing, Typography } from '../styles';
-import { ADD_JOKE } from '../context/actions/selected-jokes.actions';
+import { ADD_JOKE } from '../context/actions/jokes.actions';
 
 type Props = {
   navigation: NavigationStackProp;
